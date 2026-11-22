@@ -1,74 +1,35 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // int count = 0;
-  // while (count <= 10) {
-  //   print("Счетчик: $count");
-  //   count++;
-  // }
-
-  // int countDo = 10;
-  // do {
-  //   print("Счетчик: $countDo");
-  //   countDo++;
-  // } while (countDo < 10);
-
-  // for (int counterFor = 0; counterFor < 10; counterFor++) {
-  //   print("Счетчик: $counterFor");
-  //   if (counterFor == 7) {
-  //     print("Lucky number seven");
-  //   } else {
-  //     print("Bad luck");
-  //   }
-  // }
-
-  // List<int> ages = [5, 7, 30, 41, 60, 72];
-  // int total = 0;
-  // for (var age in ages) {
-  //   total = total + age;
-  // }
-  // print("Нам всего $total");
-
-  // for (int i = 1; i <= 10; i++) {
-  //   print('5 * $i = ${5 * i}');
-  // }
-
-  // int favorite = 5;
-  // for (int i = 0; i <= 10; i++) {
-  //   print("$favorite * $i = ${favorite * i}");
-  // }
-
-  // int favorite = 5;
-  // int sum = 0;
-  // int counter = 0;
-  // for (; counter <= 10; counter++) {
-  //   int multiply = favorite * counter;
-  //   sum += multiply;
-  //   print("$favorite * $counter = ${multiply}; sum = $sum");
-  // }
-  // print('avg=${sum ~/ counter}');
-
-  // Map<String, int> prices = {"Хлеб": 290, "Молоко": 900, "Яйца": 690};
-  // for (var item in prices.entries) {
-  //   print("${item.key} - ${item.value}");
-  // }
-
   List<int> ages = [5, 7, 30, 41, 60, 72];
   int total = 0;
   print("Длина списка ages ${ages.length}");
   print("ages[0]: ${ages[0]}");
 
-  // for (var age in ages) {
-  //   total = age = total;
-  // }
+  ages.forEach((age) {
+    if (age < 60) {
+      print(age);
+    } else {
+      print("Старость не радость");
+    }
+  });
 
-  for (int i = 0; i < ages.length; i++) {
-    if (i == 2) continue;
-    if (i == 3) break;
-    total = total + ages[i];
-  }
+  var elderly = ages.where((age) => age >= 60);
+  print(elderly);
 
-  print('Нам всего $total лет');
+  var old = ages.firstWhere((age) => age >= 60);
+  print(old);
+
+  var isEveryOld = ages.every((age) => age >= 60);
+  print("Есть ли пожилые: $isEveryOld");
+
+  var isAnyOld = ages.any((age) => age >= 60);
+  print("Все ли пожилые: $isAnyOld");
+
+  List<int> pupulationsMil = [100, 55, 1800, 2500];
+
+  var isEvetyMegapolis = pupulationsMil.every((city) => city >= 1000);
+  print("Все ли мегаполисы: $isEvetyMegapolis");
 
   runApp(const MainApp());
 }
