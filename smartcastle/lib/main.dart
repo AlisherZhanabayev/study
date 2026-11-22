@@ -48,10 +48,27 @@ void main() {
   // }
   // print('avg=${sum ~/ counter}');
 
-  Map<String, int> prices = {"Хлеб": 290, "Молоко": 900, "Яйца": 690};
-  for (var item in prices.entries) {
-    print("${item.key} - ${item.value}");
+  // Map<String, int> prices = {"Хлеб": 290, "Молоко": 900, "Яйца": 690};
+  // for (var item in prices.entries) {
+  //   print("${item.key} - ${item.value}");
+  // }
+
+  List<int> ages = [5, 7, 30, 41, 60, 72];
+  int total = 0;
+  print("Длина списка ages ${ages.length}");
+  print("ages[0]: ${ages[0]}");
+
+  // for (var age in ages) {
+  //   total = age = total;
+  // }
+
+  for (int i = 0; i < ages.length; i++) {
+    if (i == 2) continue;
+    if (i == 3) break;
+    total = total + ages[i];
   }
+
+  print('Нам всего $total лет');
 
   runApp(const MainApp());
 }
